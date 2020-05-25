@@ -22,3 +22,14 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+# chat-spade DB設計
+## usersテーブル
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false, unique: true|
+|email|string|null: false,unuque: true|
+|password|string|null: false|
+### Association
+- has_many :messages
+- has_many :groups, through: :users_groups
