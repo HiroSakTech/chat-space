@@ -108,6 +108,27 @@
   .Message-field {
     height: calc(100vh - 100px - 90px);
     background-color: #fafafa;
+    padding: 35px 0 0 40px;
+    .Message-details {
+      &__info {
+        display: flex;
+        &--who {
+          color: #333333;
+          font-size: 16px;
+        }
+        &--when {
+          color: #999999;
+          font-size: 12px;
+          padding-left: 10px;
+        }
+      }
+      &__content {
+        color: #434A54;
+        font-size: 14px;
+        margin: 12px 0 46px 0 ;
+      }
+
+    }
   }
   .Message-form {
     height: 90px;
