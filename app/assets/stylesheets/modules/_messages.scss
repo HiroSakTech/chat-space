@@ -1,0 +1,16 @@
+* {
+  box-sizing: border-box;
+}
+
+
+.Side-bar{
+  width: 300px;
+  background-color: #253141;
+  height: 100vh;
+}
+
+.Chat-main{
+  width: calc(100vw - 300px);
+  background-color: #ffffff;
+  height: 100vh;
+}
