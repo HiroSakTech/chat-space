@@ -70,16 +70,46 @@
   width: calc(100vw - 300px);
   background-color: #ffffff;
   height: 100vh;
-  &__group-info {
+  .Group-header {
     height: 100px;
     background-color: #ffffff;
     border-bottom: 1px solid #eeeeee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px 0 40px ;
+    &__info--title {
+      color: #333333;
+      font-size: 20px;
+      margin-top: 35px;
+    }
+    &__info--member-list {
+      display: flex;
+      color: #999999;
+      font-size: 12px;
+      margin-top: 15px;
+      &-name {
+      }
+    }
+    &__edit-btn {
+      width: 72px;
+      height: 40px;
+      border: 1px solid #38aef0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .btn {
+        text-decoration: none;
+        color: #38aef0;
+        font-size: 16px;
+      }
+    }
   }
-  &__group-messages {
+  .Message-field {
     height: calc(100vh - 100px - 90px);
     background-color: #fafafa;
   }
-  &__message-form {
+  .Message-form {
     height: 90px;
     background-color: #d2d2d2;
   }
