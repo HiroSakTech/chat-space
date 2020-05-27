@@ -12,19 +12,11 @@
             = icon('fas', 'cog', class: "icon__setting")
 
   .Side-bar__group-list
-    .Group-heading
-      .Group-heading__title
-        techcamp
-      .Group-heading__latest-message
-        まだメッセージがありません
-    .Group-heading
-      .Group-heading__title
-        techcamp
-      .Group-heading__latest-message
-        まだメッセージがありません
-    .Group-heading
-      .Group-heading__title
-        techcamp
-      .Group-heading__latest-message
-        まだメッセージがありません
-  
+    - current_user.groups.each do |group|
+      .Group-heading
+        = link_to '#' do
+          .Group-heading__title
+            = group.name
+          .Group-heading__latest-message
+            まだメッセージがありません
+    
