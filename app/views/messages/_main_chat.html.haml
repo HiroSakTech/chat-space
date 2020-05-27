@@ -1,0 +1,46 @@
+.Chat-main
+  .Group-header
+    .Group-header__info
+      .Group-header__info--title
+        test
+      %ul.Group-header__info--member-list
+        Member:
+        %li.Group-header__info--member-list-name
+          masa
+    .Group-header__edit-btn
+      = link_to "#", class: "btn" do
+        Edit
+  .Message-field
+    .Message-details
+      .Message-details__info
+        .Message-details__info--who
+          masa
+        .Message-details__info--when
+          2019/11/20(Wed) 17:43:01
+      .Message-details__content
+        おはよう！
+    .Message-details
+      .Message-details__info
+        .Message-details__info--who
+          masa
+        .Message-details__info--when
+          2019/11/20(Wed) 17:43:01
+      .Message-details__content
+        おはよう！
+    .Message-details
+      .Message-details__info
+        .Message-details__info--who
+          masa
+        .Message-details__info--when
+          2019/11/20(Wed) 17:43:01
+      .Message-details__content
+        おはよう！
+
+  .Message-form
+    %form.Message-form__contents
+      .Message-form__contents--input
+        %input.Message-form__contents--input--text{"placeholder": "type a message", "type": "text"}
+        %label.Message-form__contents--input--image
+          = icon('far', 'image', class: "icon__image")
+          %input.hidden{type: "file"}
+      %input.Message-form__contents--btn{"type": "submit", "value": "Send"}
