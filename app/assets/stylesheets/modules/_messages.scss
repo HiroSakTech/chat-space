@@ -1,9 +1,18 @@
+
+$font-weight: bold;
+
+@mixin flexbox($vertical,$side) {
+  display: flex;
+  align-items: $vertical;
+  justify-content:$side;
+}
+
 * {
   box-sizing: border-box;
 }
 
 .wrapper {
-  display: flex;
+  @include flexbox(null,null);
 }
 
 .Side-bar {
@@ -14,22 +23,19 @@
     height: 100px;
     color: #ffffff;
     background-color: #253141;
-    display: flex;
-    align-items: center;
+    @include flexbox(center,null);
     .Top-items {
       height: 20px;
       width: 260px;
       margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
+      @include flexbox(null,space-between);
       &__user-name { 
         font-size: 16px;
-        font-weight: bold;
+        font-weight: $font-weight;
       } 
       &__icons {
         width: 60px;
-        display: flex;
-        justify-content: flex-end;
+        @include flexbox(null,flex-end);
         list-style: none;
         .icon {
           &__edit {
@@ -52,18 +58,17 @@
       padding: 20px 0 40px 0 ;
       &__title {
         font-size: 15px;
-        font-weight: bold;
+        font-weight: $font-weight;
         color: #ffffff;
         margin-bottom: 5px;
       }
       &__latest-message {
         font-size: 11px;
-        font-weight: bold;
+        font-weight: $font-weight;
         color: #ffffff;
       }
     }
   }
-
 }
 
 .Chat-main { 
@@ -74,9 +79,7 @@
     height: 100px;
     background-color: #ffffff;
     border-bottom: 1px solid #eeeeee;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    @include flexbox(center,space-between);
     padding: 0 40px 0 40px ;
     &__info--title {
       color: #333333;
@@ -84,7 +87,7 @@
       margin-top: 35px;
     }
     &__info--member-list {
-      display: flex;
+      @include flexbox(null,null);
       color: #999999;
       font-size: 12px;
       margin-top: 15px;
@@ -95,9 +98,7 @@
       width: 72px;
       height: 40px;
       border: 1px solid #38aef0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      @include flexbox(center,center);
       .btn {
         text-decoration: none;
         color: #38aef0;
@@ -111,7 +112,7 @@
     padding: 35px 0 0 40px;
     .Message-details {
       &__info {
-        display: flex;
+        @include flexbox(null,null);
         &--who {
           color: #333333;
           font-size: 16px;
@@ -127,7 +128,6 @@
         font-size: 14px;
         margin: 12px 0 46px 0 ;
       }
-
     }
   }
   .Message-form {
@@ -136,16 +136,14 @@
     padding: 20px 40px;
 
     &__contents {
-      display: flex;
-      align-items: center;
+      @include flexbox(center,null);
       &--input { 
         width: 100%;
         position:relative;
         &--text {
           height: 50px;
           width: 100%;
-          padding-left: 10px;
-          
+          padding-left: 10px;          
         }
         &--image {
           position: absolute;
@@ -158,16 +156,14 @@
             display: none;
           }
         }
-      }
-      
+      }      
       &--btn {
         height: 50px;
         font-size: 16px;
         color: #fff;
         margin-left: 15px;
         padding: 0 30px;
-        background-color: #38aef0;
-        
+        background-color: #38aef0;        
       }
     }
   }
