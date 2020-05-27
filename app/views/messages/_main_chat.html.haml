@@ -35,5 +35,12 @@
           2019/11/20(Wed) 17:43:01
       .Message-details__content
         おはよう！
-        
+
   .Message-form
+    %form.Message-form__contents
+      .Message-form__contents--input
+        %input.Message-form__contents--input--text{"placeholder": "type a message", "type": "text"}
+        %label.Message-form__contents--input--image
+          = icon('far', 'image', class: "icon__image")
+          %input.hidden{type: "file"}
+      %input.Message-form__contents--btn{"type": "submit", "value": "Send"}

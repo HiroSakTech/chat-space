@@ -133,5 +133,42 @@
   .Message-form {
     height: 90px;
     background-color: #d2d2d2;
+    padding: 20px 40px;
+
+    &__contents {
+      display: flex;
+      align-items: center;
+      &--input { 
+        width: 100%;
+        position:relative;
+        &--text {
+          height: 50px;
+          width: 100%;
+          padding-left: 10px;
+          
+        }
+        &--image {
+          position: absolute;
+          right: 10px;
+          .icon__image {
+            line-height: 50px;
+            font-size: 25px;
+          }
+          .hidden {
+            display: none;
+          }
+        }
+      }
+      
+      &--btn {
+        height: 50px;
+        font-size: 16px;
+        color: #fff;
+        margin-left: 15px;
+        padding: 0 30px;
+        background-color: #38aef0;
+        
+      }
+    }
   }
 }
