@@ -2,13 +2,13 @@
   .Side-bar__user-name
     .Top-items
       %h3.Top-items__user-name
-        masa
+        = current_user.name
       %ul.Top-items__icons
         %li.icon
           = link_to "#" do
             = icon('fas', 'edit', class: "icon__edit")
         %li.icon
-          = link_to "#" do
+          = link_to edit_user_path(current_user) do
             = icon('fas', 'cog', class: "icon__setting")
 
   .Side-bar__group-list
