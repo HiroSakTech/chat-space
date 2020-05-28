@@ -37,10 +37,10 @@
         おはよう！
 
   .Message-form
-    %form.Message-form__contents
+    = form_with model: [@group, @message], html: {class: "Message-form__contents"}, local: true do |f|
       .Message-form__contents--input
-        %input.Message-form__contents--input--text{"placeholder": "type a message", "type": "text"}
-        %label.Message-form__contents--input--image
+        = f.text_field :content, class: "Message-form__contents--input--text", placeholder: "type a message"
+        = f.label :image, class: "Message-form__contents--input--image" do
           = icon('far', 'image', class: "icon__image")
-          %input.hidden{type: "file"}
-      %input.Message-form__contents--btn{"type": "submit", "value": "Send"}
+          = f.file_field :image, class: "hidden", type: "file"
+      = f.submit "Send", class: "Message-form__contents--btn"
