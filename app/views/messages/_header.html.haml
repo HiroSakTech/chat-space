@@ -1,0 +1,11 @@
+.Group-header
+    .Group-header__info
+      .Group-header__info--title
+        = @group.name
+      %ul.Group-header__info--member-list
+        Member:
+        %li.Group-header__info--member-list-name
+          masa
+    .Group-header__edit-btn
+      = link_to "#", class: "btn" do
+        Edit
