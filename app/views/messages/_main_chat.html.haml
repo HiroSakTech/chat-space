@@ -11,30 +11,7 @@
       = link_to "#", class: "btn" do
         Edit
   .Message-field
-    .Message-details
-      .Message-details__info
-        .Message-details__info--who
-          masa
-        .Message-details__info--when
-          2019/11/20(Wed) 17:43:01
-      .Message-details__content
-        おはよう！
-    .Message-details
-      .Message-details__info
-        .Message-details__info--who
-          masa
-        .Message-details__info--when
-          2019/11/20(Wed) 17:43:01
-      .Message-details__content
-        おはよう！
-    .Message-details
-      .Message-details__info
-        .Message-details__info--who
-          masa
-        .Message-details__info--when
-          2019/11/20(Wed) 17:43:01
-      .Message-details__content
-        おはよう！
+    = render partial: 'message', collection: @messages
 
   .Message-form
     = form_with model: [@group, @message], html: {class: "Message-form__contents"}, local: true do |f|
