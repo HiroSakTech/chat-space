@@ -20,5 +20,8 @@
         = f.text_field :content, class: "Message-form__contents--input--text", placeholder: "type a message"
         = f.label :image, class: "Message-form__contents--input--image" do
           = icon('far', 'image', class: "icon__image")
-          = f.file_field :image, class: "hidden", type: "file"
+          = f.file_field :image, class: "hidden"
       = f.submit "Send", class: "Message-form__contents--btn"
+
+
+-# file_fieldに右記の指定をしていた。type: "file"

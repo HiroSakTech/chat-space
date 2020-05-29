@@ -4,8 +4,12 @@
       = message.user.name
     .Message-details__info--when
       = message.created_at
-      .Message-details__content
+  .Message-details__content
+    - if message.content.present?
+      %p.Message__content
         = message.content
+    = image_tag message.image.url, class: 'Message__image' if message.image.present?
+
 
 
 -# 元々以下でレイアウトしていたが、それだとエラーが起きる。
@@ -17,3 +21,6 @@
 -#           = message.created_at
 -#       .Message-details__content
 -#         = message.content
+
+-# 上記、15行目<%= %> ruby言語の記載の中に、16行目が入れ子
+-# で入っているため、エラーになる物。
