@@ -55,8 +55,12 @@ $(function() {
     .done(function(data){
       let html = buildHTML(data);   
       $('.Message-field').append(html); 
+      $('.Message-Field').animate({ scrollTop: $('.Message-field')[0].scrollHeight});
       $('form')[0].reset();
-      console.log(this);
+      $('.Message-form__contents--btn').prop('disabled', false);
     })
+    .fail(function() {
+      alert("メッセージ送信に失敗しました");
+    });
   })
 })
