@@ -54,6 +54,7 @@ $font-weight: bold;
   &__group-list {
     height: calc(100vh - 100px);
     background-color: #2f3e51;
+    overflow: scroll;
     .Group-heading {
       width: 260px;
       margin: 0 auto;
