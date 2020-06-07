@@ -59,6 +59,9 @@ $font-weight: bold;
       width: 260px;
       margin: 0 auto;
       padding: 20px 0 40px 0 ;
+      &__link {
+        text-decoration: none;
+      }
       &__title {
         font-size: 15px;
         font-weight: $font-weight;

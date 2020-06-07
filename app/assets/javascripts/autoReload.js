@@ -1,5 +1,4 @@
-$(function() {
-
+  $(function() {
   function buildHTML(message){
     if (message.image) {
       let html =
@@ -43,6 +42,7 @@ $(function() {
 
   let reloadMessages = function() {
     let last_message_id = $('.Message-details:last').data("message-id");
+    console.log(last_message_id)
     $.ajax({
       url: "api/messages",
       type: 'get',
@@ -50,6 +50,7 @@ $(function() {
       data: {id: last_message_id}
     })
     .done(function(messages) {
+      console.log(messages)
       if (messages.length !== 0) {
         let insertHTML = '';
         $.each(messages, function(i, message) {
@@ -64,9 +65,5 @@ $(function() {
     });
   };
 
-
   setInterval(reloadMessages, 7000);
-
-
-
-});
+  });

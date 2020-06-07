@@ -14,7 +14,7 @@
   .Side-bar__group-list
     - current_user.groups.each do |group|
       .Group-heading
-        = link_to group_messages_path(group) do
+        = link_to group_messages_path(group),class: "Group-heading__link" do
           .Group-heading__title
             = group.name
           .Group-heading__latest-message
