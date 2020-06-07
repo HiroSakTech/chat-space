@@ -23,18 +23,23 @@ $(function() {
                 <div class="ChatMember">
                   <p class="ChatMember__name">${name}</p>
                   <input name="group[user_ids][]" type="hidden" value="${id}" />
-                  <div class="ChatMember__remove ChatMember__button">削除</div>
+                  <div class="ChatMember__remove ChatMember__button" data-user-id="${id}" data-user-name="${name}">削除</div>
                 </div>
                 `;
     $(".ChatMembers").append(html);
   }
 
+  // グループメンバーに追加済の人間を検索から排除するためにuserId配列を定義
+  // メンバー追加時、削除時に配列の要素としてuserIdを追加・削除する様に指定
+  // 初期のグループメンバーが検索結果から除外される実装はカリキュラム上取り扱いなし
+  let memberIds = [];
+  
   $('#UserSearch__field').on("keyup", function() {
     let input = $('#UserSearch__field').val();
     $.ajax( {
       type: 'GET',
       url: '/users',
-      data: { keyword: input },
+      data: { keyword: input, memberIds: memberIds},
       dataType: 'json'
     })
     .done(function(users) {
@@ -61,8 +66,17 @@ $(function() {
     const userId = $(this).attr("data-user-id");
     $(this).parent().remove();
     addMember(userName, userId);
+    memberIds.push(userId);
   });
   $(".ChatMembers").on("click", ".ChatMember__remove", function() {
+    const userId = $(this).attr("data-user-id");
+    memberIds = memberIds.filter(function(memberId) {
+      return memberId !== userId;
+    })
+    console.log(memberIds);
+
     $(this).parent().remove();
+    
   });
 });
+
